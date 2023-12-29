@@ -1,0 +1,17 @@
+<!-- components/ClipBoard.astro -->
+<script>
+  export let children;
+  
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(children[1]);
+      console.log('Copiado al portapapeles');
+    } catch (error) {
+      console.error('Error al copiar al portapapeles:', error);
+    }
+  };
+</script>
+
+<div on:click={copyToClipboard}>
+  {children}
+</div>

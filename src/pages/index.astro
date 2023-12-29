@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from "../components/Badge.astro"
+import LinkedInIcon from "../components/icons/LinkedIn.astro"
+import InstagramIcon from '../components/icons/Instagram.astro';
+import SocialPill from "../components/SocialPill.astro";
+import GmailIcon from "../components/icons/Gmail.astro";
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Briefcase from '../components/icons/Briefcase.astro';
+import  CodeIcon from '../components/icons/Code.astro';
+import Projects from '../components/Projects.astro';
+
+---
+
+<Layout 
+	title="Porfolio de alex.herv19 - Desarrollador y Programador Web"
+	description="Contrata a alex.herv19 para crear tu aplicación web. Desarrollador Web y Estudiante de Ingenieria Informatica en la Universidad de Málaga."
+	>
+	<main class="px-6">
+		<SectionContainer class="py-14 lg:py-36 pb-24">
+			<img
+        		class="rounded-full size-20 mb-4" 
+        		src="../../alex.herv19.PNG"
+        		alt="alex.herv19"
+    		/>
+			<h1 class="text-white text-2xl lg:text-5xl font-bold flex flex-row gap-x-3 lg:gap-x-4 pb-10 md:text-4xl">
+				Hey, soy alex.herv19 
+				<a 
+					target="_blank"
+					rel="noopener"
+					class="flex justify-center items-center"
+					href="https://www.linkedin.com/in/alejandro-juan-herv%C3%A1s-vogt-19a49720a/"
+				>
+					<Badge>Disponible para trabajar</Badge>
+				</a>
+			</h1>
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+				<span class= "text-blue-200">Estudiante Ingenieria Informatica UMA y Desarrollador Web</span>.
+				<span class="text-red-300 opacity-80">De Málaga, España 🇪🇸</span>. 
+				<span class="opacity-70">Especializado en crear paginas web únicas.</span>
+				<span class="text-yellow-300 opacity-70">Si lo puedes imaginar, lo puedes programar.</span>
+			</h2>
+
+			<nav class="flex gap-y-4 lg:gap-x-3 mt-12 lg:mt-8 flex-col lg:flex-row max-w-full justify-end lg:justify-start">
+				<SocialPill href="https://www.linkedin.com/in/alejandro-juan-herv%C3%A1s-vogt-19a49720a/">
+					<LinkedInIcon class="size-6"/>
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://www.instagram.com/alex.herv19/">
+					<InstagramIcon class="size-6"/>
+					Instagram
+				</SocialPill>
+				<div class="copy-text">
+						<SocialPill href="mailto:ahervog@uma.es">
+							<GmailIcon class="size-6"/>
+							ahervog@uma.es
+						</SocialPill>
+				</div>
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer class="pt-10 pb-32" id="experiencia">
+			<h2 class="text-2xl font-semibold mb-6 flex items-center gap-x-3">
+				<Briefcase class="size-7"/>
+				Experiencia laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer class="pt-10" id="proyectos">
+			<h2 class="text-2xl font-semibold mb-6 flex items-center gap-x-3">
+				<CodeIcon class="size-7"/>
+				Proyectos
+			</h2>
+			<Projects />
+		</SectionContainer>
+	</main>
+</Layout>

@@ -1,0 +1,57 @@
+---
+import HTML from '../components/icons/HTML.astro';
+import CSS from '../components/icons/CSS.astro';
+import JavaScript from '../components/icons/JavaScript.astro'
+
+const TAGS = {
+    HTML: {
+        name: 'HTML',
+        class: "bg-[#323330] text-[#ff5733]/80",
+        icon: HTML,
+    },
+    CSS: {
+        name: 'CSS',
+        class: "bg-[#323330] text-[#79addc]",
+        icon: CSS,
+    },
+    JavaScript: {
+        name: 'JavaScript',
+        class: "bg-[#323330] text-[#f0db4f]",
+        icon: JavaScript,
+    }
+}
+const PROJECTS = [
+    {
+        title: 'Project 1',
+        description: 'ejemplo',
+        link: '#',
+        github: '#',
+        image: 'https://via.placeholder.com/300x200',
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript]
+    }
+]
+---
+
+{
+    PROJECTS.map(({title, description, image, tags}) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex flex-row mb-5 gap-x-4">
+                {tags.map((tag, index) => (
+                    <li>
+                        <span class={` shadow-white/10 shadow-2xl min-w-auto items-center justify-center flex gap-x-2 rounded-full text-xs font-bold py-2 px-4 ${tag.class}`}>
+                            <tag.icon class="size-4"/>
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>    
+            <img
+                class="rounded shadow-2xl shadow-white/10" 
+                src={image} 
+                alt={`Captura de pantalla del proyecto ${image}`} 
+            />
+        </article>
+    ))
+}

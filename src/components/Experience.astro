@@ -1,0 +1,31 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCES = [
+    {
+        date:'Actualmente...',
+        title: 'Estudiante Ingeniería Informatica',
+        description: 'Estudiando el Grado en Ingeniería Informatica 4º año en la Universidad de Málaga',
+        link: '#'
+    },
+    {
+        date:'Marzo 2023 - Junio 2023',
+        title: 'Colaborador FullStack EBAU',
+        description:    `Participante de un grupo de trabajo para la creación de microservicios usando Angular y Spring Boot con el 
+                        objetivo de automatizar y optimizar diferentes procesos en la EBAU. Nos encargamos
+                        de la Gestión de Sedes y Aulas, y además Notificaciones. Estuve enfocado sobre todo en el Backend
+                        y Frontend de la Gestión de Sedes y Aulas.`,
+        link: '#'
+    }
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+    {
+        EXPERIENCES.map(experience => (
+        <li class="mb-10 ms-4">
+            <ExperienceItem {...experience} />
+        </li>
+        ))
+    }                  
+</ol>
+
